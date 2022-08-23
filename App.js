@@ -1,19 +1,18 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import { TailwindProvider } from "tailwindcss-react-native";
-import { StyleSheet, } from 'react-native';
-import OnboardingScreen from './src/screens/OnboardingScreen';
+
+import AuthStack from './src/navigations/AuthStack';
+import { NavigationContainer } from '@react-navigation/native';
 
 const App = () => {
   return (
-    <TailwindProvider>
-      <OnboardingScreen />
-    </TailwindProvider>
+    <NavigationContainer>
+      <TailwindProvider>
+        <AuthStack />
+      </TailwindProvider>
+    </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-
-})
 
 export default App;

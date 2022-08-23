@@ -14,6 +14,9 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-dateapp-dateappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-dateapp-dateappTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		DC41EADC975943E59195618E /* Sk-Modernist-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2181D6BFC50D448880858C63 /* Sk-Modernist-Bold.otf */; };
+		0BEA584DE9D34A369D222AA4 /* Sk-Modernist-Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = D82F8E1FBBDD497084A08800 /* Sk-Modernist-Mono.otf */; };
+		362E03A1629E4C4EB780A4AF /* Sk-Modernist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 700C26B3116F4EA6B3716E09 /* Sk-Modernist-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = dateapp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-dateapp-dateappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dateapp-dateappTests.release.xcconfig"; path = "Target Support Files/Pods-dateapp-dateappTests/Pods-dateapp-dateappTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		2181D6BFC50D448880858C63 /* Sk-Modernist-Bold.otf */ = {isa = PBXFileReference; name = "Sk-Modernist-Bold.otf"; path = "../src/assets/fonts/Sk-Modernist-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D82F8E1FBBDD497084A08800 /* Sk-Modernist-Mono.otf */ = {isa = PBXFileReference; name = "Sk-Modernist-Mono.otf"; path = "../src/assets/fonts/Sk-Modernist-Mono.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		700C26B3116F4EA6B3716E09 /* Sk-Modernist-Regular.otf */ = {isa = PBXFileReference; name = "Sk-Modernist-Regular.otf"; path = "../src/assets/fonts/Sk-Modernist-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				10D82466346A4F40B0FF89A4 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +154,17 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		10D82466346A4F40B0FF89A4 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				2181D6BFC50D448880858C63 /* Sk-Modernist-Bold.otf */,
+				D82F8E1FBBDD497084A08800 /* Sk-Modernist-Mono.otf */,
+				700C26B3116F4EA6B3716E09 /* Sk-Modernist-Regular.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +262,9 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				DC41EADC975943E59195618E /* Sk-Modernist-Bold.otf in Resources */,
+				0BEA584DE9D34A369D222AA4 /* Sk-Modernist-Mono.otf in Resources */,
+				362E03A1629E4C4EB780A4AF /* Sk-Modernist-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
