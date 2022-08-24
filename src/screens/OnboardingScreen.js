@@ -2,8 +2,11 @@ import { FlatList, Image, Text, View, useWindowDimensions, Animated, TouchableOp
 import React, { useEffect, useRef, useState } from 'react'
 import Svg, { G, Circle } from 'react-native-svg';
 import { ArrowRightIcon, EyeIcon } from 'react-native-heroicons/solid'
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useNavigation } from '@react-navigation/native';
 
-const OnboardingScreen = () => {
+const OnboardingScreen = ({ navigation }) => {
+  const navig = useNavigation();
   const dummyData = [
     {
       id: 0,
@@ -34,13 +37,19 @@ const OnboardingScreen = () => {
   const scrollX = useRef(new Animated.Value(0)).current;
   const slidesRef = useRef(null);
 
-  const scrollTo = () => {
+  const scrollTo = async () => {
     if (currentIndex < dummyData.length - 1) {
       slidesRef.current.scrollToIndex({
         index: currentIndex + 1
       });
+
     } else {
-      console.log('nice')
+      try {
+        navig.replace('LoginScreen');
+        await AsyncStorage.setItem('@viewedOnboarding', 'true');
+      } catch (error) {
+        console.log('Error @setItem: ', error);
+      }
     }
   }
 
