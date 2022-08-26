@@ -4,6 +4,7 @@ import Svg, { G, Circle } from 'react-native-svg';
 import { ArrowRightIcon, EyeIcon } from 'react-native-heroicons/solid'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
+import CustomButton from '../components/CustomButton';
 
 const OnboardingScreen = ({ navigation }) => {
   const navig = useNavigation();
@@ -80,7 +81,12 @@ const OnboardingScreen = ({ navigation }) => {
 
       <OnboardingPaginator data={dummyData} scrollX={scrollX} />
       {/* <OnboardingButton percentage={(currentIndex + 1) * (100 / dummyData.length)} scrollTo={scrollTo} currentIndex={currentIndex} /> */}
-      <OnboardingCustomButton scrollTo={scrollTo} currentIndex={currentIndex} />
+
+      {
+        currentIndex !== 2 ?
+          <CustomButton onPress={scrollTo} text='Next' backgroundColor='bg-primary-0' /> :
+          <CustomButton onPress={scrollTo} text='Create an account' backgroundColor='bg-primary-0' textSize='text-base' />
+      }
     </View>
 
   )
@@ -194,21 +200,6 @@ const OnboardingButton = ({ percentage, scrollTo, currentIndex }) => {
         }
       </TouchableOpacity>
     </View>
-  )
-}
-
-const OnboardingCustomButton = ({ scrollTo, currentIndex }) => {
-  return (
-    <>
-      <TouchableOpacity onPress={scrollTo} className="bg-primary-0 justify-center items-center rounded-xl" style={{ width: '72%', height: 50 }}>
-        {
-          currentIndex !== 2 ?
-            <Text className='text-lg text-white font-skModernistBold'>Next</Text> :
-            <Text className='text-base text-white font-skModernistBold '>Create an account</Text>
-        }
-      </TouchableOpacity>
-
-    </>
   )
 }
 
