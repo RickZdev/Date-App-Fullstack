@@ -1,10 +1,11 @@
 import { Image, Text, TouchableOpacity, View } from 'react-native'
 import React, { useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import CustomButton from '../components/CustomButton';
 import CustomSocialButton from '../components/CustomSocialButton';
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   const clearOnboarding = async () => {
     try {
       await AsyncStorage.removeItem('@viewedOnboarding');
@@ -22,10 +23,10 @@ const LoginScreen = () => {
           className='w-4/5 mt-12'
         />
       </View>
-      <View className='flex-1 justify-center items-center'>
-        <Text className='text-base text-primary-0 font-skModernistBold mb-7'>Sign up to continue</Text>
+      <View className='flex-1 justify-center px-11'>
+        <Text className='text-base text-primary-0 font-skModernistBold mb-7 text-center'>Sign up to continue</Text>
         <CustomButton onPress={clearOnboarding} text='Continue with email' backgroundColor='bg-primary-0' textSize={'text-base'} additionalStyle='mb-5' />
-        <CustomButton text='Use phone number' backgroundColor='bg-white' textSize={'text-base'} textColor='text-primary-0' additionalStyle='mb-5' />
+        <CustomButton onPress={() => navigation.navigate('MobileScreen')} text='Use phone number' backgroundColor='bg-white' textSize={'text-base'} textColor='text-primary-0' additionalStyle='mb-5' />
       </View>
       <View className='space-y-4 pb-10'>
         <View className='bg-black w-4/5 h-0.5 bg-opacity-25 self-center' />
@@ -51,7 +52,3 @@ const LoginScreen = () => {
 }
 
 export default LoginScreen
-
-{/* <TouchableOpacity onPress={clearOnboarding}>
-<Text>Clear Onboarding</Text>
-</TouchableOpacity> */}

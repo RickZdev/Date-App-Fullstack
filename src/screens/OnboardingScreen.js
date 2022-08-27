@@ -43,7 +43,6 @@ const OnboardingScreen = ({ navigation }) => {
       slidesRef.current.scrollToIndex({
         index: currentIndex + 1
       });
-
     } else {
       try {
         navig.replace('LoginScreen');
@@ -81,12 +80,13 @@ const OnboardingScreen = ({ navigation }) => {
 
       <OnboardingPaginator data={dummyData} scrollX={scrollX} />
       {/* <OnboardingButton percentage={(currentIndex + 1) * (100 / dummyData.length)} scrollTo={scrollTo} currentIndex={currentIndex} /> */}
-
-      {
-        currentIndex !== 2 ?
-          <CustomButton onPress={scrollTo} text='Next' backgroundColor='bg-primary-0' /> :
-          <CustomButton onPress={scrollTo} text='Create an account' backgroundColor='bg-primary-0' textSize='text-base' />
-      }
+      <View className='w-full px-11'>
+        {
+          currentIndex !== 2 ?
+            <CustomButton onPress={scrollTo} text='Next' backgroundColor='bg-primary-0' /> :
+            <CustomButton onPress={scrollTo} text='Create an account' backgroundColor='bg-primary-0' textSize='text-base' />
+        }
+      </View>
     </View>
 
   )
