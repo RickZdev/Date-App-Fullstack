@@ -1,5 +1,5 @@
-import { Image, Text, TouchableOpacity, View } from 'react-native'
-import React, { useEffect } from 'react';
+import { Image, Text, View } from 'react-native'
+import React from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import CustomButton from '../components/CustomButton';
