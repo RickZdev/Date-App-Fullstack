@@ -5,10 +5,10 @@ import { CalendarIcon, CameraIcon } from 'react-native-heroicons/solid'
 import CustomTextInput from '../components/CustomTextInput'
 import CustomButton from '../components/CustomButton'
 
-const ProfileDetailsScreen = () => {
+const ProfileDetailsScreen = ({ navigation }) => {
   return (
     <View className='flex-1 bg-primary-1'>
-      <ScrollView className='px-11 py-10' showsVerticalScrollIndicator={false}>
+      <ScrollView className='p-10' showsVerticalScrollIndicator={false}>
         <View className='space-y-3 pb-10'>
           <Text className='font-skModernistBold text-base text-primary-0 text-right'>Skip</Text>
           <Text className='font-skModernistBold text-4xl text-primary-0'>Profile details</Text>
@@ -39,7 +39,7 @@ const ProfileDetailsScreen = () => {
               <Text className={`pl-3 text-sm text-primary-0 font-skModernistBold`}>Choose birthday date</Text>
             </View>
           </TouchableOpacity>
-          <CustomButton text='Confirm' backgroundColor='bg-primary-0' />
+          <CustomButton onPress={() => navigation.navigate('GenderScreen')} text='Confirm' backgroundColor='bg-primary-0' />
         </View>
       </ScrollView >
     </View >
