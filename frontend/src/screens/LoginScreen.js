@@ -5,7 +5,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import CustomButton from '../components/CustomButton';
 import CustomSocialButton from '../components/CustomSocialButton';
 
-const LoginScreen = ({ navigation }) => {
+import { useNavigation } from '@react-navigation/native';
+
+const LoginScreen = () => {
+  const navigation = useNavigation();
   const clearOnboarding = async () => {
     try {
       await AsyncStorage.removeItem('@viewedOnboarding');

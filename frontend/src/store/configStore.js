@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import onboardingReducer from "./features/onboardingSlice";
+import userReducer from "./features/userSlice";
 
 const configStore = configureStore({
   reducer: {
-    onboardingReducer: onboardingReducer,
+    user: userReducer
   }
 })
 

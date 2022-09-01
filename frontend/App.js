@@ -2,10 +2,10 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { TailwindProvider } from "tailwindcss-react-native";
 import { Provider } from 'react-redux';
-
-import AuthStack from './src/navigations/AuthStack';
-import configStore from './src/store/configStore';
 import { NavigationContainer } from '@react-navigation/native';
+
+import configStore from './src/store/configStore';
+import AuthStack from './src/navigations/AuthStack';
 
 const App = () => {
   return (

@@ -9,6 +9,7 @@ import GenderScreen from '../screens/GenderScreen';
 import InterestScreen from '../screens/InterestScreen';
 import NotificationScreen from '../screens/NotificationScreen';
 import ContactScreen from '../screens/ContactScreen';
+import { HomeStack } from './AppStack';
 
 const Stack = createStackNavigator();
 
@@ -24,6 +25,7 @@ const AuthStack = () => {
       <Stack.Screen name="InterestScreen" component={InterestScreen} options={{ presentation: 'transparentModal' }} />
       <Stack.Screen name="ContactScreen" component={ContactScreen} options={{ presentation: 'transparentModal' }} />
       <Stack.Screen name="NotificationScreen" component={NotificationScreen} options={{ presentation: 'transparentModal' }} />
+      <Stack.Screen name="HomeStack" component={HomeStack} options={{ presentation: 'transparentModal' }} />
     </Stack.Navigator>
   )
 }
