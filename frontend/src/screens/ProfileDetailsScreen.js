@@ -20,9 +20,10 @@ const ProfileDetailsScreen = ({ navigation }) => {
     // getUser(setUsers);
     // addUser(firstName, lastName);
     // deleteUser('630e150c56b7f367e8cc61ed');
-    // navigation.navigate('HomeStack');
+    // navigation.navigate('HomeScreen');
+    navigation.navigate('GenderScreen');
 
-    dispatch(userAction.loginUser({ token: 'zxc', firstName, lastName }));
+    // dispatch(userAction.loginUser({ token: 'zxc', firstName, lastName }));
   }
 
   useEffect(() => {
@@ -30,7 +31,7 @@ const ProfileDetailsScreen = ({ navigation }) => {
     const retrieveToken = async () => {
       if (userToken !== null) {
         await AsyncStorage.setItem('userToken', userToken);
-        navigation.navigate('HomeStack');
+        navigation.navigate('HomeScreen');
       } else {
         console.log('NO TOKEN FOUND!');
       }

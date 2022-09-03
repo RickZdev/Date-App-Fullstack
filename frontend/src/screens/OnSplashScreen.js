@@ -15,7 +15,7 @@ const OnSplashScreen = ({ navigation }) => {
   const checkUserToken = async () => {
     try {
       const hasUserToken = await AsyncStorage.getItem('userToken');
-      hasUserToken !== null ? navigation.replace('HomeStack') : checkOnboarding();
+      hasUserToken !== null ? navigation.replace('HomeScreen') : checkOnboarding();
     } catch (error) {
       console.log('Error @checkUserToken: ', error.message);
     }

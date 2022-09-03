@@ -25,7 +25,7 @@ const AuthStack = () => {
       <Stack.Screen name="InterestScreen" component={InterestScreen} options={{ presentation: 'transparentModal' }} />
       <Stack.Screen name="ContactScreen" component={ContactScreen} options={{ presentation: 'transparentModal' }} />
       <Stack.Screen name="NotificationScreen" component={NotificationScreen} options={{ presentation: 'transparentModal' }} />
-      <Stack.Screen name="HomeStack" component={HomeStack} options={{ presentation: 'transparentModal' }} />
+      <Stack.Screen name="HomeScreen" component={HomeStack} options={{ presentation: 'modal' }} />
     </Stack.Navigator>
   )
 }

@@ -1,8 +1,15 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
 import CustomButton, { CustomSkipButton } from '../components/CustomButton'
+import { useDispatch } from 'react-redux'
+import { userAction } from '../store/features/userSlice'
 
 const NotificationScreen = ({ navigation }) => {
+  const dispatch = useDispatch();
+  const handleGetUser = () => {
+    dispatch(userAction.loginUser({ token: 'zxc', firstName: 'fred', lastName: 'castaneda' }));
+    navigation.replace('HomeScreen')
+  }
   return (
     <View className='flex-1 bg-primary-1 p-10'>
       <CustomSkipButton withBackButton={false} />
@@ -18,7 +25,7 @@ const NotificationScreen = ({ navigation }) => {
         <Text className='font-skModernistRegular text-sm text-primary-0 text-center'>Get push-notification when you get the match or received a message.</Text>
       </View>
       <View className='flex-1 justify-end items-center'>
-        <CustomButton onPress={() => navigation.navigate('HomeStack')} text={'I want to be notified'} textSize='text-sm' backgroundColor='bg-primary-0' />
+        <CustomButton onPress={() => handleGetUser()} text={'I want to be notified'} textSize='text-sm' backgroundColor='bg-primary-0' />
       </View>
     </View>
   )

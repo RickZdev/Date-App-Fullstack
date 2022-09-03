@@ -2,7 +2,7 @@ import React from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
 import Feather from 'react-native-vector-icons/Feather'
 import { useNavigation } from '@react-navigation/native';
-import { ChevronLeftIcon } from 'react-native-heroicons/solid';
+import { ChevronLeftIcon, AdjustmentsIcon, } from 'react-native-heroicons/solid';
 
 const CustomButton = ({ onPress, text, backgroundColor, textSize, textColor, additionalStyle, children }) => {
   return (
@@ -22,7 +22,7 @@ const CustomGenderButton = ({ onPress, text, backgroundColor, textSize, textColo
   )
 }
 
-const CustomSkipButton = ({ withBackButton = true }) => {
+const CustomSkipButton = ({ onPress, withBackButton = true, withSkipButton = true, withFilterButton = false, withDescription = false }) => {
   const navigation = useNavigation();
   return (
     <View className={`flex-1 flex-row items-start ${withBackButton ? 'justify-between' : 'justify-end'}`}>
@@ -32,9 +32,26 @@ const CustomSkipButton = ({ withBackButton = true }) => {
           <ChevronLeftIcon size={22} color='#E94057' />
         </TouchableOpacity>
       }
-      <TouchableOpacity>
-        <Text className='text-primary-0 font-skModernistBold text-base'>Skip</Text>
-      </TouchableOpacity>
+      {
+        withDescription &&
+        <View className='justify-start items-center'>
+          <Text className='font-skModernistBold text-primary-0 text-2xl'>Discover</Text>
+          <Text className='font-skModernistRegular text-primary-0 text-sm'>Chicago, Il</Text>
+        </View>
+
+      }
+      {
+        withSkipButton &&
+        <TouchableOpacity>
+          <Text className='text-primary-0 font-skModernistBold text-base'>Skip</Text>
+        </TouchableOpacity>
+      }
+      {
+        withFilterButton &&
+        <TouchableOpacity onPress={onPress} className='bg-white p-3 rounded-xl '>
+          <AdjustmentsIcon size={22} color='#E94057' />
+        </TouchableOpacity>
+      }
     </View>
   )
 }

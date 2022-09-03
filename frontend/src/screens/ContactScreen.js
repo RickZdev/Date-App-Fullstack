@@ -18,7 +18,7 @@ const ContactScreen = ({ navigation }) => {
         <Text className='font-skModernistRegular text-sm text-primary-0 text-center'>You can find friends from your contact lists to connected.</Text>
       </View>
       <View className='flex-1 justify-end items-center'>
-        <CustomButton onPress={() => navigation.navigate('NotificationScreen')} text={'Access to a contact list'} textSize='text-sm' backgroundColor='bg-primary-0' />
+        <CustomButton onPress={() => navigation.replace('NotificationScreen')} text={'Access to a contact list'} textSize='text-sm' backgroundColor='bg-primary-0' />
       </View>
     </View>
   )
