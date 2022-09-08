@@ -4,7 +4,7 @@ import { CalendarIcon, CameraIcon } from 'react-native-heroicons/solid'
 import { useSelector, useDispatch } from 'react-redux';
 
 import CustomTextInput from '../components/CustomTextInput'
-import CustomButton from '../components/CustomButton'
+import CustomButton, { CustomSkipButton } from '../components/CustomButton'
 import { addUser, getUser, deleteUser } from '../database/db'
 import { userAction } from '../store/features/userSlice';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -44,7 +44,7 @@ const ProfileDetailsScreen = ({ navigation }) => {
     <View className='flex-1 bg-primary-1'>
       <ScrollView className='p-10' showsVerticalScrollIndicator={false}>
         <View className='space-y-3 pb-10'>
-          <Text className='font-skModernistBold text-base text-primary-0 text-right'>Skip</Text>
+          <CustomSkipButton withBackButton={false} />
           <Text className='font-skModernistBold text-4xl text-primary-0'>Profile details</Text>
         </View>
         <View className='justify-center items-center pb-5'>

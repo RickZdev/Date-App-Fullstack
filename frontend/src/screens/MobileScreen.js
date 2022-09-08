@@ -15,7 +15,7 @@ const MobileScreen = ({ navigation }) => {
             <Text className='text-white font-skModernistRegular absolute left-6 top-6'>(+91)         | </Text>
             <ChevronDownIcon size={18} color='#fff' style={{ position: 'absolute', top: 23, left: 60 }} />
           </CustomTextInput>
-          <TouchableOpacity onPress={() => navigation.navigate('ProfileDetailsScreen')} className={`bg-primary-0 justify-center items-center rounded-xl w-full`} style={{ height: 62 }}>
+          <TouchableOpacity onPress={() => navigation.navigate('VerificationScreen')} className={`bg-primary-0 justify-center items-center rounded-xl w-full`} style={{ height: 62 }}>
             <Text className={`text-lg text-white font-skModernistBold `}>Continue</Text>
           </TouchableOpacity>
         </View>

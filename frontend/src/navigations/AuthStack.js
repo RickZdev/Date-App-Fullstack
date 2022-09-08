@@ -10,6 +10,8 @@ import InterestScreen from '../screens/InterestScreen';
 import NotificationScreen from '../screens/NotificationScreen';
 import ContactScreen from '../screens/ContactScreen';
 import { HomeStack } from './AppStack';
+import VerificationScreen from '../screens/VerificationScreen';
+import ActivityIndicatorScreen from '../screens/ActivityIndicatorScreen';
 
 const Stack = createStackNavigator();
 
@@ -20,7 +22,9 @@ const AuthStack = () => {
       <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} options={{ presentation: 'transparentModal' }} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ presentation: 'transparentModal' }} />
       <Stack.Screen name="MobileScreen" component={MobileScreen} options={{ presentation: 'modal' }} />
-      <Stack.Screen name="ProfileDetailsScreen" component={ProfileDetailsScreen} options={{ presentation: 'transparentModal' }} />
+      <Stack.Screen name="VerificationScreen" component={VerificationScreen} options={{ presentation: 'transparentModal' }} />
+      <Stack.Screen name="ActivityIndicatorScreen" component={ActivityIndicatorScreen} options={{ presentation: 'transparentModal' }} />
+      <Stack.Screen name="ProfileDetailsScreen" component={ProfileDetailsScreen} options={{ presentation: 'modal' }} />
       <Stack.Screen name="GenderScreen" component={GenderScreen} options={{ presentation: 'transparentModal' }} />
       <Stack.Screen name="InterestScreen" component={InterestScreen} options={{ presentation: 'transparentModal' }} />
       <Stack.Screen name="ContactScreen" component={ContactScreen} options={{ presentation: 'transparentModal' }} />
