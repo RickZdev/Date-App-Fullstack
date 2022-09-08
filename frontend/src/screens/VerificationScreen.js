@@ -6,6 +6,7 @@ import { BackspaceIcon } from 'react-native-heroicons/outline'
 import { useState } from 'react'
 import { useRef } from 'react'
 import { useEffect } from 'react'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const VerificationScreen = ({ navigation }) => {
   const keypad = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'S', '0', 'X'];
@@ -51,7 +52,7 @@ const VerificationScreen = ({ navigation }) => {
     }
 
     if (tempOtp.length === otp.length) {
-      navigation.replace('ActivityIndicatorScreen');
+      navigation.replace('ActivityIndicatorScreen', { data: otp });
     }
   }, [tempOtp])
 
@@ -110,7 +111,7 @@ const VerificationScreen = ({ navigation }) => {
             </TouchableOpacity>
           )}
         />
-        <TouchableOpacity className='flex-1 justify-end items-center' onPress={() => navigation.navigate('ProfileDetailsScreen')}>
+        <TouchableOpacity className='flex-1 justify-end items-center' onPress={async () => await AsyncStorage.removeItem('@viewedWelcomeStack')}>
           <Text className='font-skModernistBold text-primary-0 text-base'>Send again</Text>
         </TouchableOpacity>
       </View>

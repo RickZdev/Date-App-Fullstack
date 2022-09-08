@@ -4,14 +4,10 @@ import OnboardingScreen from '../screens/OnboardingScreen';
 import LoginScreen from '../screens/LoginScreen';
 import OnSplashScreen from '../screens/OnSplashScreen';
 import MobileScreen from '../screens/MobileScreen';
-import ProfileDetailsScreen from '../screens/ProfileDetailsScreen';
-import GenderScreen from '../screens/GenderScreen';
-import InterestScreen from '../screens/InterestScreen';
-import NotificationScreen from '../screens/NotificationScreen';
-import ContactScreen from '../screens/ContactScreen';
-import { HomeStack } from './AppStack';
 import VerificationScreen from '../screens/VerificationScreen';
 import ActivityIndicatorScreen from '../screens/ActivityIndicatorScreen';
+import { WelcomeStack } from './WelcomeStack';
+import { HomeStack } from './AppStack';
 
 const Stack = createStackNavigator();
 
@@ -24,12 +20,8 @@ const AuthStack = () => {
       <Stack.Screen name="MobileScreen" component={MobileScreen} options={{ presentation: 'modal' }} />
       <Stack.Screen name="VerificationScreen" component={VerificationScreen} options={{ presentation: 'transparentModal' }} />
       <Stack.Screen name="ActivityIndicatorScreen" component={ActivityIndicatorScreen} options={{ presentation: 'transparentModal' }} />
-      <Stack.Screen name="ProfileDetailsScreen" component={ProfileDetailsScreen} options={{ presentation: 'modal' }} />
-      <Stack.Screen name="GenderScreen" component={GenderScreen} options={{ presentation: 'transparentModal' }} />
-      <Stack.Screen name="InterestScreen" component={InterestScreen} options={{ presentation: 'transparentModal' }} />
-      <Stack.Screen name="ContactScreen" component={ContactScreen} options={{ presentation: 'transparentModal' }} />
-      <Stack.Screen name="NotificationScreen" component={NotificationScreen} options={{ presentation: 'transparentModal' }} />
-      <Stack.Screen name="HomeScreen" component={HomeStack} options={{ presentation: 'modal' }} />
+      <Stack.Screen name="WelcomeStack" component={WelcomeStack} options={{ presentation: 'modal' }} />
+      <Stack.Screen name="HomeStack" component={HomeStack} />
     </Stack.Navigator>
   )
 }

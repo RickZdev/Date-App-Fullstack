@@ -30,7 +30,7 @@ const BottomTab = () => {
         tabBarHideOnKeyboard: true,
       }}
     >
-      <Tab.Screen name="HomeTab" component={HomeTab}
+      <Tab.Screen name="HomeScreen" component={HomeTab}
         options={{
           tabBarIcon: ({ color, size }) => (
             <ColorSwatchIcon color={color} size={size} />

@@ -31,7 +31,7 @@ const ProfileDetailsScreen = ({ navigation }) => {
     const retrieveToken = async () => {
       if (userToken !== null) {
         await AsyncStorage.setItem('userToken', userToken);
-        navigation.navigate('HomeScreen');
+        navigation.navigate('HomeTab');
       } else {
         console.log('NO TOKEN FOUND!');
       }
@@ -39,6 +39,12 @@ const ProfileDetailsScreen = ({ navigation }) => {
 
     retrieveToken();
   }, [userToken])
+
+  const removeToken = async () => {
+    await AsyncStorage.removeItem('userToken');
+    dispatch(userAction.logoutUser());
+    navigation.replace('LoginScreen');
+  }
 
   return (
     <View className='flex-1 bg-primary-1'>
@@ -66,7 +72,7 @@ const ProfileDetailsScreen = ({ navigation }) => {
           <View>
             <CustomTextInput label='Last name' onChangeText={(text) => setLastName(text)} />
           </View>
-          <TouchableOpacity className='mb-10'>
+          <TouchableOpacity className='mb-10' onPress={() => removeToken()}>
             <View className={`opacity-20 bg-primary-0 rounded-xl w-full`} style={{ height: 62 }} />
             <View className='flex-row absolute pl-5 w-full h-full justify-start items-center'>
               <CalendarIcon size={24} color='#E94057' />

@@ -3,12 +3,15 @@ import React from 'react'
 import CustomButton, { CustomSkipButton } from '../components/CustomButton'
 import { useDispatch } from 'react-redux'
 import { userAction } from '../store/features/userSlice'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const NotificationScreen = ({ navigation }) => {
   const dispatch = useDispatch();
-  const handleGetUser = () => {
+  const handleGetUser = async () => {
+
+    await AsyncStorage.setItem('@viewedWelcomeStack', 'true');
     dispatch(userAction.loginUser({ token: 'zxc', firstName: 'fred', lastName: 'castaneda' }));
-    navigation.replace('HomeScreen')
+    navigation.replace('HomeStack')
   }
   return (
     <View className='flex-1 bg-primary-1 p-10'>

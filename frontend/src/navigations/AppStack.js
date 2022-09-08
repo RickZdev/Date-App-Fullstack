@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 const HomeStack = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={BottomTab}>
-      <Stack.Screen name="HomeStack" component={BottomTab} />
+      <Stack.Screen name="HomeTab" component={BottomTab} />
       <Stack.Screen name="BottomSheetScreen" component={BottomSheetScreen} options={{ presentation: 'transparentModal' }} />
     </Stack.Navigator>
   )
